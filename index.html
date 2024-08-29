@@ -13,10 +13,12 @@
         var scroll = setInterval(function(){ window.scrollBy(0,3); }, 100);
         
         window.onload = function() {
-            var audio = new Audio('https://enzzeon.github.io/uncensored/audio/LIMBv3.mp3');
+            var audio = new Audio('https://enzzeon.github.io/uncensored/audio/limb.ogg');
             audio.loop = true;  // Para repetir o áudio em loop
-            audio.play();
-            };
+            audio.play().catch(function(error) {
+                console.error('Falha ao reproduzir o áudio:', error);
+            });
+        };
         </script>
 
     <style>
