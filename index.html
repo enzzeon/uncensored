@@ -12,14 +12,24 @@
     <script>
         var scroll = setInterval(function(){ window.scrollBy(0,3); }, 100);
         
+       <!-- Howler.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <!-- Script Autoscroll -->
+    <script>
+        var scroll = setInterval(function(){ window.scrollBy(0,3); }, 100);
+
+        // Script para carregar e tocar o áudio limb.ogg sem mostrar o player usando Howler.js
         window.onload = function() {
-            var audio = new Audio('https://enzzeon.github.io/uncensored/audio/limb.ogg');
-            audio.loop = true;  // Para repetir o áudio em loop
-            audio.play().catch(function(error) {
-                console.error('Falha ao reproduzir o áudio:', error);
+            var sound = new Howl({
+                src: ['https://enzzeon.github.io/uncensored/audio/limb.ogg'],
+                loop: true,
+                autoplay: true,
+                onplayerror: function() {
+                    console.error('Falha ao reproduzir o áudio.');
+                }
             });
         };
-        </script>
+    </script>
 
     <style>
 
