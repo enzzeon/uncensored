@@ -11,6 +11,11 @@
 <!--scrip autoscroll-->
     <script>
         var scroll = setInterval(function(){ window.scrollBy(0,3); }, 100);
+        
+        window.onload = function() {
+            var audio = new Audio('./audio/LIMBv3.mp3');
+            audio.loop = true;  // Para repetir o áudio em loop
+            audio.play();
         </script>
 
     <style>
@@ -58,10 +63,10 @@ body {font-family: 'Overpass Mono';
 
 <body>
 
-    <audio autoplay loop>
+    <!--<audio autoplay loop>
     <source src="/main/audio/LIMBv3.mp3" type="audio/mp3">
     Your browser does not support the audio element.
-</audio>
+</audio>-->
 
 <h1>uncensored</h1>
 
